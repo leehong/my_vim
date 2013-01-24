@@ -77,6 +77,22 @@ fun! StripTrailingWhitespace()
 endfun
 autocmd BufWritePre * call StripTrailingWhitespace()
 nnoremap <f12> :%s/[ \t\r]\+$//g<cr>
+let NERDChristmasTree=1
+" 控制当光标移动超过一定距离时，是否自动将焦点调整到屏中心
+let NERDTreeAutoCenter=1
+" 指定书签文件
+let NERDTreeBookmarksFile=$VIMFILES.'\NERDTree_bookmarks'
+" 指定鼠标模式(1.双击打开 2.单目录双文件 3.单击打开)
+let NERDTreeMouseMode=2
+" 是否默认显示书签列表
+ let NERDTreeShowBookmarks=1
+" 是否默认显示文件
+let NERDTreeShowFiles=1
+" 是否默认显示隐藏文件
+let NERDTreeShowHidden=1
+" 是否默认显示行号
+let NERDTreeShowLineNumbers=0
+cnoreabbrev nerd NERDTree
 " 设置Color-Sample
 map <silent><F4> :NEXTCOLOR<cr>
 map <silent><F3> :PREVCOLOR<cr>
@@ -93,5 +109,11 @@ nnoremap <c-l> <c-w>l
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 let g:Powerline_symbols='unicode'
+"设置Fuzzyinder
+let mapleader = "\\"
+map <leader>F :FufFile<CR>
+map <leader>f :FufTaggedFile<CR>
+map <leader>g :FufTag<CR>
+map <leader>b :FufBuffer<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 noremap <silent> <F2> :NERDTreeMirrorToggle<CR>

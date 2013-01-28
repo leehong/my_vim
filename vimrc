@@ -76,26 +76,30 @@ fun! StripTrailingWhitespace()
     %s/\s\+$//e
 endfun
 autocmd BufWritePre * call StripTrailingWhitespace()
+
 nnoremap <f12> :%s/[ \t\r]\+$//g<cr>
-let NERDChristmasTree=1
-" 控制当光标移动超过一定距离时，是否自动将焦点调整到屏中心
-let NERDTreeAutoCenter=1
-" 指定书签文件
-let NERDTreeBookmarksFile=$VIMFILES.'\NERDTree_bookmarks'
-" 指定鼠标模式(1.双击打开 2.单目录双文件 3.单击打开)
+let NERDTreeShowBookmarks=0
+let NERDTreeChDirMode=2
 let NERDTreeMouseMode=2
-" 是否默认显示书签列表
- let NERDTreeShowBookmarks=1
-" 是否默认显示文件
-let NERDTreeShowFiles=1
-" 是否默认显示隐藏文件
-let NERDTreeShowHidden=1
-" 是否默认显示行号
-let NERDTreeShowLineNumbers=0
-cnoreabbrev nerd NERDTree
+let g:nerdtree_tabs_focus_on_files=1
+let g:nerdtree_tabs_open_on_gui_startup=0
+" open directory of current opened file
+map <leader>r :NERDTreeFind<cr>
+let NERDTreeMinimalUI=1
+let NERDTreeDirArrows=1
+let g:NERDTreeWinSize=30
 " 设置Color-Sample
 map <silent><F4> :NEXTCOLOR<cr>
 map <silent><F3> :PREVCOLOR<cr>
+map ca :Calendar<cr>
+
+let g:html_indent_inctags = "html,body,head,tbody"
+let g:html_indent_script1 = "inc"
+let g:html_indent_style1 = "inc"
+" setting vimviki
+let g:vimwiki_camel_case = 0
+let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki'}]
+let g:calendar_diary= [{'path': '~/Dropbox/vimwiki'}]
 
 "在输入状态下将jj映射为esc
 :imap jj <Esc>

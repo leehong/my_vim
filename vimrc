@@ -18,8 +18,9 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
 set nocompatible
 set backspace=2
 set history=100
+set t_Co=256
 set nu
-colorscheme candycode
+colorscheme tango
 "状态栏
 set laststatus=2
 "显示文件绝路径
@@ -38,7 +39,6 @@ set report=0
 set hidden
 set list listchars=tab:»·,trail:·
 
-syntax on
 filetype on
 filetype indent on
 filetype plugin on
@@ -60,12 +60,13 @@ set expandtab
 let g:SuperTabRetainCompletionType="context"
 
 autocmd FileType make     set noexpandtab
-autocmd FileType python   set noexpandtab
+autocmd FileType python setlocal et sta sw=4 sts=4
 autocmd FileType eruby  set tabstop=2 shiftwidth=2
 autocmd FileType ruby,rdoc set tabstop=2 shiftwidth=2
 autocmd FileType html set tabstop=2 shiftwidth=2
 autocmd FileType javascript set tabstop=2 shiftwidth=2
 autocmd FileType coffee set tabstop=2 shiftwidth=2
+au BufRead,BufNewFile *.handlebars,*.hbs set ft=handlebars
 autocmd FileType *.{md,mdown,mkd,mkdn,markdown,mdwn} set tabstop=2 shiftwidth=2
 
 fun! StripTrailingWhitespace()
@@ -121,3 +122,12 @@ map <leader>g :FufTag<CR>
 map <leader>b :FufBuffer<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 noremap <silent> <F2> :NERDTreeMirrorToggle<CR>
+nmap <F6> :IndentGuidesToggle<cr>
+" eggcache vim
+nnoremap ; :
+:command W w
+:command WQ wq
+:command Wq wq
+:command Q q
+:command Qa qa
+:command QA qa

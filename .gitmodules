@@ -61,3 +61,9 @@
 [submodule "bundle/calendar.vim"]
 	path = bundle/calendar.vim
 	url = https://github.com/vim-scripts/calendar.vim--Matsumoto.git
+[submodule "bundle/vim-coffee-script"]
+	path = bundle/vim-coffee-script
+	url = https://github.com/kchmck/vim-coffee-script.git
+[submodule "bundle/vim-handlebars"]
+	path = bundle/vim-handlebars
+	url = https://github.com/nono/vim-handlebars.git

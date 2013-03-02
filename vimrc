@@ -78,6 +78,10 @@ fun! StripTrailingWhitespace()
 endfun
 autocmd BufWritePre * call StripTrailingWhitespace()
 
+" Quickly edit/reload the vimrc file
+ nmap <silent> <leader>ev :e $MYVIMRC<CR>
+ nmap <silent> <leader>sv :so $MYVIMRC<CR>
+
 nnoremap <f12> :%s/[ \t\r]\+$//g<cr>
 let NERDTreeShowBookmarks=0
 let NERDTreeChDirMode=2
@@ -123,6 +127,7 @@ map <leader>b :FufBuffer<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 noremap <silent> <F2> :NERDTreeMirrorToggle<CR>
 nmap <F6> :IndentGuidesToggle<cr>
+
 " eggcache vim
 nnoremap ; :
 :command W w
@@ -131,3 +136,5 @@ nnoremap ; :
 :command Q q
 :command Qa qa
 :command QA qa
+
+cmap w!! w !sudo tee >/dev/null %

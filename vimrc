@@ -105,6 +105,7 @@ let g:html_indent_style1 = "inc"
 let g:vimwiki_camel_case = 0
 let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki'}]
 let g:calendar_diary= [{'path': '~/Dropbox/vimwiki'}]
+let g:user_zen_mode='a'
 
 "在输入状态下将jj映射为esc
 :imap jj <Esc>

@@ -67,3 +67,9 @@
 [submodule "bundle/vim-handlebars"]
 	path = bundle/vim-handlebars
 	url = https://github.com/nono/vim-handlebars.git
+[submodule "bundle/tabular"]
+	path = bundle/tabular
+	url = https://github.com/godlygeek/tabular.git
+[submodule "bundle/zencoding-vim"]
+	path = bundle/zencoding-vim
+	url = git@github.com:mattn/zencoding-vim.git

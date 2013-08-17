@@ -73,3 +73,9 @@
 [submodule "bundle/zencoding-vim"]
 	path = bundle/zencoding-vim
 	url = git@github.com:mattn/zencoding-vim.git
+[submodule "bundle/neocomplcache.vim"]
+	path = bundle/neocomplcache.vim
+	url = https://github.com/Shougo/neocomplcache.vim.git
+[submodule "bundle/tcomment_vim.git"]
+	path = bundle/tcomment_vim.git
+	url = https://github.com/tomtom/tcomment_vim.git

@@ -12,6 +12,15 @@ let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_guide_size = 1
 let g:indent_guides_start_level = 2
 let g:indent_guides_auto_colors = 0
+let g:acp_enableAtStartup = 0
+
+" Use neocomplcache.
+let g:neocomplcache_enable_at_startup = 1
+" Use smartcase.
+let g:neocomplcache_enable_smart_case = 1
+" Set minimum syntax keyword length.
+let g:neocomplcache_min_syntax_length = 3
+let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=white   ctermbg=3
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
 
@@ -20,7 +29,7 @@ set backspace=2
 set history=100
 set t_Co=256
 set nu
-colorscheme tango
+colorscheme taqua
 "状态栏
 set laststatus=2
 "显示文件绝路径
@@ -128,6 +137,7 @@ map <leader>b :FufBuffer<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 noremap <silent> <F2> :NERDTreeMirrorToggle<CR>
 nmap <F6> :IndentGuidesToggle<cr>
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " eggcache vim
 nnoremap ; :
@@ -137,5 +147,9 @@ nnoremap ; :
 :command Q q
 :command Qa qa
 :command QA qa
+nnoremap <F11> :set invpaste paste?<CR>
+imap <F11> <C-O>:set invpaste paste?<CR>
+set pastetoggle=<F11>
+
 
 cmap w!! w !sudo tee >/dev/null %
